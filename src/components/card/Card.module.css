@@ -1,0 +1,66 @@
+.card {
+    background-color: #fff;
+    position: relative;
+}
+
+.dot span {
+    color: white;
+}
+
+.dot {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 5px;
+}
+
+.Alive {
+    background-color: #2ecc71;
+}
+
+.unknown {
+    background-color: #bdc3c7;
+}
+
+.Dead {
+    background-color: #c0392b;
+}
+
+.card .descr {
+    padding: 10px;
+}
+
+.card img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.name {
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.more:hover {
+    box-shadow: 0px 10px 20px rgb(80 123 252 / 87%);
+    background: #2d61fd;
+}
+
+.more {
+    transition: all .4s;
+    cursor: pointer;
+    background: #507BFC;
+    box-shadow: 0px 10px 20px rgba(80, 123, 252, 0.5);
+    border-radius: 100px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}

@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+import Header from "./components/header/Header";
+import Container from "./components/container/Container";
+import Popup from "./components/popup/Popup";
+import AppContext from "./context";
+
 
 function App() {
+  const [context, setContext] = useState({
+    popData: null,
+    open: false
+  });
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AppContext.Provider value={[context, setContext]}>
+        <Header />
+        <Container />
+        <Popup />
+      </AppContext.Provider>
     </div>
   );
 }
