@@ -1,0 +1,155 @@
+.bg {
+  ackground: rgba(0, 0, 0, 0);
+  animation: fadeIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@keyframes fadeIn {
+  0% {
+    background: rgba(0, 0, 0, 0);
+  }
+  100% {
+    background: rgba(0, 0, 0, 0.7);
+  }
+}
+
+.modal {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: translateX(100%);
+  animation-delay: 0.3s;
+  animation: moveLeft 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  z-index: 10;
+  background-color: #f7f8fc;
+  max-width: 450px;
+  width: 100%;
+  overflow-y: scroll;
+  opacity: 1;
+  transition: all .4s;
+}
+
+@keyframes moveLeft {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+.avatar:before {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 130px;
+  content: " ";
+  position: absolute;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.imagebg {
+  height: 130px;
+  width: 100%;
+  object-fit: cover;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.imagemain {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  position: absolute;
+  left: 50%;
+  top: 80px;
+  transform: translateX(-50%);
+  outline: 1px solid white;
+}
+.block {
+  margin: 40px auto;
+  filter: drop-shadow(0px 24px 64px rgba(45, 48, 58, 0.06));
+  max-width: 320px;
+  width: 100%;
+  background: #fbfbfb;
+  border-radius: 20px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(150px);
+  animation: moveUp 0.4s ease-in 0.2s forwards;
+  padding: 10px;
+}
+.avatar {
+  padding: 0;
+  padding-bottom: 30px;
+}
+.name {
+  margin-top: 80px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+.prop {
+  color: #9597a1;
+  font-size: 14px;
+  text-align: center;
+}
+.propLine {
+  border-bottom: 1px solid lightgrey;
+  padding: 10px;
+}
+.propLine:last-child {
+  border: none;
+}
+.propname {
+  padding-bottom: 10px;
+  font-weight: bold;
+  font-size: 16px;
+}
+.close {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  color: white;
+  border: none;
+  background-color: #3498db;
+  cursor: pointer;
+  max-width: 90%;
+  margin: 20px auto;
+}
+.episod {
+  max-height: 150px;
+  overflow-y: auto;
+}
+.fade{
+  opacity:0;
+}
+@keyframes moveUp {
+  0% {
+    opacity: 0;
+    transform: translateY(150px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 380px) {
+  .block {
+    max-width: 90vw;
+  }
+  .close {
+    max-width: 90vw;
+  }
+  .modal {
+    width: 100vw;
+  }
+}

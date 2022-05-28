@@ -1,22 +1,33 @@
-import styles from "./Card.module.css"
-import React, { useState, useEffect, useContext } from 'react';
-import AppContext from "../../context";
-function Card(props) {
-    const [context, setContext] = useContext(AppContext);
-    return (
-        <div className={styles.card}>
-            <img width="300" height={300} src={props.data.image} alt="" loading="lazy"/>
-            <div className={[styles[props.data.status], styles.dot].join(" ")}><span>{props.data.status}</span></div>
-            <div className={styles.descr}>
-                <div className={styles.name}>{props.data.name}</div>
-                <div className={styles.Prop}>Gender: {props.data.gender}</div>
-                <div className={styles.Prop}>Species: {props.data.species}</div>
-                
-               
-                <div className={styles.more} onClick={() => setContext({ ...context,popData: props,open:true})}>More info</div>
-            </div>
+import { useAppState } from "../../store";
+import { ACTION_DETAIL } from "../../store/Reducers";
+import styles from "./Card.module.css";
+
+export default function Card({ data, delay }) {
+  const { dispatch } = useAppState();
+  const showDetail = () => {
+    dispatch({ type: ACTION_DETAIL, payload: data });
+  };
+  const animate = {animationDelay:delay}
+  
+  return (
+    <div className={styles.card} style={animate}>
+      <img src={data.image} alt="" />
+      <div className={styles.content}>
+        <div className={[styles.status, styles[data.status]].join(" ")}>
+          {data.status}
         </div>
-    );
+        <h4 className={styles.name}>{data.name}</h4>
+        <div className={styles.property}>
+          <span className="gender">Gender: {data.gender}</span>
+          <span className="type">Type: {data.type}</span>
+          <span className="location">Location: {data.location.name}</span>
+          <span className="origin">Origin: {data.origin.name}</span>
+          <span className="species">Species: {data.species}</span>
+        </div>
+        <button onClick={() => showDetail()} className={styles.detail}>Show Detail</button>
+      </div>
+    </div>
+  );
 }
 
-export default Card;
+// url: "https://rickandmortyapi.com/api/character/1"

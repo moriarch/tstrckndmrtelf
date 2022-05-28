@@ -1,6 +1,9 @@
 .filter {
     margin-top: 20px;
     margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 10px;
 }
 
 .filter input,
@@ -11,7 +14,6 @@
     color: #747688;
     padding: 10px 20px;
     outline: 0;
-    margin-right: 10px;
     margin-top: 10px;
 }
 
@@ -22,10 +24,26 @@
 .filter [type=reset]:hover {
     color: white;
     cursor: pointer;
-    background-color: #507BFC;
-    border-color: #507BFC;
+    background-color: #3498db;
+    border-color: #3498db;
 }
 
 .filter input {
     padding: 12px 20px;
 }
+
+@media (max-width: 758px) {
+    .filter {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+@media (max-width: 450px) {
+    .filter {
+        grid-template-columns:  1fr;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+
+  }
