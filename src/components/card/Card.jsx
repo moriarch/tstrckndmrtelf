@@ -8,7 +8,7 @@ export default function Card({ data, delay }) {
     dispatch({ type: ACTION_DETAIL, payload: data });
   };
   const animate = {animationDelay:delay}
-  
+
   return (
     <div className={styles.card} style={animate}>
       <img src={data.image} alt="" />

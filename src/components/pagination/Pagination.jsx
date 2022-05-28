@@ -1,12 +1,20 @@
 import { useAppState } from "../../store";
 import { ACTION_CHANGE_URL } from "../../store/Reducers";
 import styles from "./Pagination.module.css";
-export default function Pagination() {
+export default function Pagination({loading}) {
   const { state, dispatch } = useAppState();
   const loadMore = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+  });
     dispatch({ type: ACTION_CHANGE_URL, payload: state.info.next });
   };
   const loadBefore = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+  });
     dispatch({ type: ACTION_CHANGE_URL, payload: state.info.prev });
   };
   return (

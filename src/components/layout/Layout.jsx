@@ -8,7 +8,7 @@ import Modal from "../modal/Modal";
 import Pagination from "../pagination/Pagination";
 import styles from "./Layout.module.css";
 
-const classes = [styles.grid, [styles.grid, styles.h0].join(" ")];
+
 
 export default function Layout() {
   const { state, dispatch } = useAppState();
@@ -21,12 +21,12 @@ export default function Layout() {
   return (
     <div className={styles.container}>
       <Filter />
-      <div className={state.loading ? classes[1] : classes[0]}>
+      <div className={styles.grid}>
         {state.items.map((hero, i) => (
           <Card key={hero.id} delay={i * 100 + "ms"} data={hero} />
         ))}
       </div>
-      <Pagination />
+      <Pagination loading={state.loading}/>
       <Modal data={state.current} />
     </div>
   );
