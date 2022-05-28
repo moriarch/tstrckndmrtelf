@@ -39,10 +39,9 @@
   border-radius: 10px;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  opacity:0;
+  opacity: 0;
   transition: all 0.3s;
-  animation: moveUp 0.2s ease-in  forwards;
-  
+  animation: moveUp 0.2s ease-in forwards;
 }
 @keyframes moveUp {
   0% {
@@ -80,8 +79,8 @@
   cursor: pointer;
   transition: all 0.3s;
   margin: 10px auto;
-  width:100%
+  width: 100%;
 }
-.detail:hover{
-box-shadow: #3498db 2px 2px 10px;
+.detail:hover {
+  box-shadow: #3498db 2px 2px 10px;
 }

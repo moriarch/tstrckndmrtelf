@@ -8,8 +8,6 @@ import Modal from "../modal/Modal";
 import Pagination from "../pagination/Pagination";
 import styles from "./Layout.module.css";
 
-
-
 export default function Layout() {
   const { state, dispatch } = useAppState();
   useEffect(() => {
@@ -26,7 +24,7 @@ export default function Layout() {
           <Card key={hero.id} delay={i * 100 + "ms"} data={hero} />
         ))}
       </div>
-      <Pagination loading={state.loading}/>
+      <Pagination loading={state.loading} />
       <Modal data={state.current} />
     </div>
   );

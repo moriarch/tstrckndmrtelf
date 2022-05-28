@@ -31,7 +31,7 @@
   width: 100%;
   overflow-y: scroll;
   opacity: 1;
-  transition: all .4s;
+  transition: all 0.4s;
 }
 
 @keyframes moveLeft {
@@ -127,8 +127,8 @@
   max-height: 150px;
   overflow-y: auto;
 }
-.fade{
-  opacity:0;
+.fade {
+  opacity: 0;
 }
 @keyframes moveUp {
   0% {

@@ -7,7 +7,7 @@ export default function Card({ data, delay }) {
   const showDetail = () => {
     dispatch({ type: ACTION_DETAIL, payload: data });
   };
-  const animate = {animationDelay:delay}
+  const animate = { animationDelay: delay };
 
   return (
     <div className={styles.card} style={animate}>
@@ -24,10 +24,11 @@ export default function Card({ data, delay }) {
           <span className="origin">Origin: {data.origin.name}</span>
           <span className="species">Species: {data.species}</span>
         </div>
-        <button onClick={() => showDetail()} className={styles.detail}>Show Detail</button>
+        <button onClick={() => showDetail()} className={styles.detail}>
+          Show Detail
+        </button>
       </div>
     </div>
   );
 }
 
-// url: "https://rickandmortyapi.com/api/character/1"
